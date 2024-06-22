@@ -23,6 +23,6 @@
 ## Once both terminals are up and running: `localhost:3000` and you should be able to run the features
 At this point, the app should launch the dev environment for both the front-end and back-end. 
 
-To run tests, in a third terminal, navigate to `node-runtime/tests/weather.test.js` and type `test` in the CLI.
+To run tests, in a third terminal, navigate to `node-runtime/test.js` and type `test` in the CLI.
 
 
