@@ -6,7 +6,7 @@ const cors = require('cors');
 const createApp = (weatherData = {}) => {
     const app = express();
     const PORT = 3001;
-    const API_KEY = 'e271e85f2c846d76b95770d7f2d1f60e';
+    const API_KEY = '';
     const BASE_URL = 'http://api.openweathermap.org/data/2.5/weather';
     const zipCodes = ['10001', '94103'];
 
