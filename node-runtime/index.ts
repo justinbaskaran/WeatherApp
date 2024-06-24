@@ -9,6 +9,8 @@ const createApp = (weatherData = {}) => {
     const API_KEY = '';
     const BASE_URL = 'http://api.openweathermap.org/data/2.5/weather';
     const zipCodes = ['10001', '94103'];
+    const weatherDataList=weatherData;
+
 
     app.use(cors());
 
@@ -35,7 +37,7 @@ const createApp = (weatherData = {}) => {
     // Endpoint to get polled weather data
     app.get('/polled-weather/:zipCode', async (req, res) => {
         const zipCode = req.params.zipCode;
-        const data = weatherData[zipCode];
+        const data = weatherDataList[zipCode];
 
         if (data) {
             res.json(data);
@@ -53,7 +55,7 @@ const createApp = (weatherData = {}) => {
                 const response = await fetch(url);
                 if (!response.ok) throw new Error('Weather data not available');
                 const data = await response.json();
-                weatherData[zipCode] = data;
+                weatherDataList[zipCode] = data;
             } catch (error) {
                 console.error(`Error fetching data for ${zipCode}:`, error.message);
             }
